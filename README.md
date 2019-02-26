@@ -14,4 +14,10 @@ To clone this click here https://github.com/umurangamirwa/pitch
 * ./start
 * python3.6 manage.py shell
 
+## Technologies Used
+css
+html
+Python v3.6
+Boostrap
+Flask
 
