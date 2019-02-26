@@ -27,3 +27,5 @@ Flask
 * Phone: 0781055307
 * Contact address:Rwanda
 
+## License
+* MIT Copyright (c) 2019 Marie claire
