@@ -7,5 +7,5 @@ The users will submit their one minute pitches and other users will vote on them
 ### Setup/Installation Requirements
 To start using this project use the following commands:
 
-To clone this click here 
+To clone this click here https://github.com/umurangamirwa/pitch
 
