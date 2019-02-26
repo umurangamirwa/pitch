@@ -5,8 +5,8 @@ from wtforms import StringField,PasswordField,BooleanField,SubmitField
 
 class ReviewForm(FlaskForm):
 
-    title = StringField('Review title',validators=[Required()])
-    review = TextAreaField('Movie review', validators=[Required()])
+    title = StringField(validators=[Required()])
+    review = TextAreaField(validators=[Required()])
     submit = SubmitField('Submit')
 
 class LoginForm(FlaskForm):
