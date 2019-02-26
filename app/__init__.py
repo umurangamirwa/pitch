@@ -41,8 +41,8 @@ def create_app(config_name):
     app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
 
     # setting config
-    from .request import configure_request
-    configure_request(app)
+    # from .request import configure_request
+    # configure_request(app)
 
     # configure UploadSet
     configure_uploads(app,photos)
@@ -56,8 +56,8 @@ def create_app(config_name):
 # from flask_bootstrap import Bootstrap
 # from flask_sqlalchemy import SQLAlchemy
 
-# bootstrap = Bootstrap()
-# db = SQLAlchemy()
+bootstrap = Bootstrap()
+db = SQLAlchemy()
 
 # #  Initializing application
 # app = Flask(__name__,instance_relative_config = True)
