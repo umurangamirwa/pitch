@@ -9,3 +9,9 @@ To start using this project use the following commands:
 
 To clone this click here https://github.com/umurangamirwa/pitch
 
+## Run this command lines in your terminal:
+* in database:pitch=# \dt
+* ./start
+* python3.6 manage.py shell
+
+
