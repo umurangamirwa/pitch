@@ -93,24 +93,20 @@ def profile(uname):
 
     return render_template("profile/profile.html", user = user)
 
-@main.route('/user/<uname>/update', methods = ['GET', 'POST'])
+@main.route('/pitch/new_pitch', methods = ['GET','POST'])
 @login_required
-def update_profile(uname):
-    user = User.query.filter_by(username = uname).first()
-    if user is None:
-        abort(404)
+def new_pitch():
+    pitch_form = PitchForm()    
 
-    form = UpdateProfile()
+    if pitch_form.validate_on_submit():
+        pitch = Pitch(title = pitch_form.title.data, category = pitch_form.category.data, pitch_content = pitch_form.pitch_content.data, author = pitch_form.author.data)
 
-    if form.validate_on_submit():
-        user.bio = form.bio.data
-
-        db.session.add(user)
-        db.session.commit()
-
-        return redirect(url_for('.profile', uname = user.username))
-
-    return render_template('profile/update.html', form = form)
+        db.session.add(pitch)
+        db.session.commit() 
+        
+        return redirect(url_for('main.index'))
+    
+    return render_template('new_pitch.html', pitch_form = pitch_form)   
 
 @main.route('/user/<uname>/update', methods = ['GET', 'POST'])
 @login_required
