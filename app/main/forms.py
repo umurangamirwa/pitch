@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,TextAreaField,SubmitField
+from wtforms import StringField,TextAreaField,SubmitField, RadioField
 from wtforms.validators import Required
 # from wtforms import StringField,PasswordField,BooleanField,SubmitField
 
@@ -7,8 +7,8 @@ class pitchForm(FlaskForm):
 
     title = StringField('pitch Title', validators=[Required()])
     author = StringField('Author', validators=[Required()])
-    pitch-content = TextAreaField('write pitch', validators=[Required()])
-    category = RadioField('Pick Category', choices=[('Pickup Lines', 'Pickup Lines'), ('Interview Pitch', 'Interview Pitch'), ('Product Pitch', 'Product Pitch'), ('Promotion Pitch', 'Promotion Pitch')], validators=[Required()])  
+    pitch_content = TextAreaField('write pitch', validators=[Required()])
+    category = RadioField('Pick Category', choices=[('Pickup Lines', 'Pickup Lines'),('Interview Pitch', 'Interview Pitch'), ('Product Pitch', 'Product Pitch'), ('Promotion Pitch', 'Promotion Pitch')], validators=[Required()])  
     submit = SubmitField('Submit')
 
 class UpdateProfile(FlaskForm):

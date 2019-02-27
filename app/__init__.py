@@ -56,8 +56,8 @@ def create_app(config_name):
 # from flask_bootstrap import Bootstrap
 # from flask_sqlalchemy import SQLAlchemy
 
-bootstrap = Bootstrap()
-db = SQLAlchemy()
+# bootstrap = Bootstrap()
+# db = SQLAlchemy()
 
 # #  Initializing application
 # app = Flask(__name__,instance_relative_config = True)
@@ -72,5 +72,5 @@ db = SQLAlchemy()
 # bootstrap.init_app(app)
 # db.init_app(app)
 
-from .main import views
-from .main import error
+# from .main import views
+# from .main import error

@@ -15,11 +15,8 @@ def index():
     '''
 
     title = 'pitches'
-    product_pitch = pitch.query.filter_by(category = 'product.Pitch').all()
-    pickup_lines = pitch.query.filter_by(category = 'pickup Lines').all()
-    interview_pitch = pitch.query.filter_by(category = 'Interview pitch').all()
-    promotion_pitch = pitch.query.filter_by(category = 'Interview pitch').all()
-    return render_template('index.html', title = title,product_pitch=product_pitch,pickup_lines=pickup_lines,promotion_pitch=promotion_pitch)
+    product= Pitch.query.all()
+    return render_template('index.html', title = title,product=product)
 @main.route('/user/<uname>')
 
 def profile(uname):
