@@ -5,18 +5,18 @@ from wtforms.validators import Required
 
 class pitchForm(FlaskForm):
 
-    title = StringField('pitchTitle',validators = [Required()])
-    author = StringField('Author',validators=[Required()])
-    pitch-content = TextAreaField('writepitch',validators = [Required()])
+    title = StringField('pitch Title', validators=[Required()])
+    author = StringField('Author', validators=[Required()])
+    pitch-content = TextAreaField('write pitch', validators=[Required()])
+    category = RadioField('Pick Category', choices=[('Pickup Lines', 'Pickup Lines'), ('Interview Pitch', 'Interview Pitch'), ('Product Pitch', 'Product Pitch'), ('Promotion Pitch', 'Promotion Pitch')], validators=[Required()])  
     submit = SubmitField('Submit')
 
-class Updateprofile(FlaskForm):
-    bio = TextAreaField('write comment...',validators = [Required()])
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Say something about yourself...', validators = [Required()])
     submit = SubmitField('Submit')
-    # remember = BooleanField('Remember me')
-    # submit = SubmitField('Sign In')
 
-class CommentForm(FlaskForm):
-    bio = TextAreaField('write comment...',validators = [Required()])
+class CommentsForm(FlaskForm):
+    body = TextAreaField('Write a comment...', validators=[Required()])
     submit = SubmitField('Submit')
+
 

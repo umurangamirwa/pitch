@@ -42,6 +42,7 @@ class Pitch(db.Model):
     __tablename__ = 'pitches'
 
     id = db.Column(db.Integer,primary_key = True)
+    title = db.Column(db.String(255))
     name = db.Column(db.String(255))
     category = db.Column(db.String(255))
     pitch_content = db.Column(db.String(255))  
