@@ -30,7 +30,7 @@ def profile(uname):
 
     return render_template("profile/profile.html", user = user)
 
-    @main.route('/user/<uname>/update', methods = ['GET', 'POST'])
+@main.route('/user/<uname>/update', methods = ['GET', 'POST'])
 @login_required
 def update_profile(uname):
     user = User.query.filter_by(username = uname).first()
@@ -49,7 +49,7 @@ def update_profile(uname):
 
     return render_template('profile/update.html', form = form)
 
-    @main.route('/user/<uname>/update/pic',methods= ['POST'])
+@main.route('/user/<uname>/update/pic',methods= ['POST'])
 def update_pic(uname):
     user = User.query.filter_by(username = uname).first()
     if 'photo' in request.files:
