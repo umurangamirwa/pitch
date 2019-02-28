@@ -1,11 +1,11 @@
 import os
 
 class Config:
-
-    # MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
-    # MOVIE_API_KEY = os.environ.get('MOVIE_API_KEY')
+    '''
+    General configuration parent class
+    '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:123abc@localhost/ip'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:123abc@localhost/pitch'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
     #  email configurations
@@ -16,20 +16,21 @@ class Config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
      # simple mde  configurations
-    SIMPLEMDE_JS_IIFE = True
-    SIMPLEMDE_USE_CDN = True
+    # SIMPLEMDE_JS_IIFE = True
+    # SIMPLEMDE_USE_CDN = True
 
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:123abc@localhost/ip'
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     pass
 
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:123abc@localhost/ip'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:123abc@localhost/pitch'
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:123abc@localhost/ip'
+    
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:123abc@localhost/pitch'
     DEBUG = True
 
 config_options = {
@@ -37,3 +38,4 @@ config_options = {
 'production':ProdConfig,
 'test':TestConfig
 }
+
