@@ -14,6 +14,7 @@ To clone this click here https://github.com/umurangamirwa/pitch
 * python3.6 manage.py shell
 * ./start
 * python3.6 manage.py shell
+*  https://pickz.herokuapp.com/
 
 ## Technologies Used
 css
